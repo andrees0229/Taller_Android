@@ -29,7 +29,7 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/design_default_color_primary"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="Digite su Nombre"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
@@ -46,12 +46,46 @@
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/design_default_color_primary"
         android:ems="10"
-        android:hint="Apellido"
+        android:hint="Digite su Apellido"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNombre"
+        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+    <EditText
+    android:id="@+id/etUser"
+    android:layout_width="match_parent"
+    android:layout_height="38dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginTop="17dp"
+    android:layout_marginEnd="32dp"
+    android:backgroundTint="@color/design_default_color_primary"
+    android:ems="10"
+    android:hint="Digite su Usuario"
+    android:inputType="textPersonName"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.533"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/etApellido"
+    tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:ems="10"
+        android:hint="Digite su contraseña"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUser"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
     <ImageView
@@ -70,11 +104,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:text="Genero"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etApellido"
+        app:layout_constraintTop_toBottomOf="@+id/etPass"
         tools:ignore="MissingConstraints" />
 
     <CheckBox
@@ -82,7 +116,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="41dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:text="Masculino"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etgenero"
@@ -93,7 +127,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:text="Femenino"
         app:layout_constraintStart_toEndOf="@+id/cbm"
         app:layout_constraintTop_toBottomOf="@+id/etgenero"
