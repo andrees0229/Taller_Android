@@ -24,10 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    boolean t = false;
+
     EditText etusuario,etcontraseña;
 
-    Button btnLogin;
+    Button btnLogin,btnRegister;
     String nusuario,contraseña;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etusuario = findViewById(R.id.etusuario);
         etcontraseña = findViewById(R.id.etcontraseña);
+        //Boton Login
         btnLogin = findViewById(R.id.bLogin);
         btnLogin.setOnClickListener(this::next_home);
+        //Boton Register
+        btnRegister = findViewById(R.id.bRegister);
+        btnRegister.setOnClickListener(this::next_Formulario);
+
+
     }
 
+    //Pasar al Inicio(HOME)
     public void next_home(View b){
 
         if(etusuario.getText().toString().isEmpty() || etcontraseña.getText().toString().isEmpty()){
@@ -70,44 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-
-
-
-
-    public void verificarLogin(String usuarion,String contraseña) {
-
-// Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "https://run.mocky.io/v3/67da634c-8dd9-45af-8d9f-f89ff59eb450";
-        // Request a string response from the provided URL.
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        boolean tv = false;
-                        try {
-                            JSONArray usuarios = response.getJSONArray("usuarios");
-
-
-                            int cantidadUsuarios = usuarios.length();
-                            Log.d("", "cantidadUsuarios: " + cantidadUsuarios);
-                            for (int i = 0; i < cantidadUsuarios; i++) {
-                                JSONObject usuario = usuarios.getJSONObject(i);
-                                Log.d("", "Nombre: " + usuario.getString("nombre") + " " + usuario.getString("apellido") + " Verificado");
-
-
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("", "Error: " + error);
-            }
-        });
-        // Add the request to the RequestQueue.
-        queue.add(jsonRequest);
+    //Pasar al Formulario Registro
+    public void next_Formulario(View b){
+        Intent ir = new Intent(this, FormularioRegister.class);
+        ir.addFlags(ir.FLAG_ACTIVITY_CLEAR_TOP | ir.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(ir);
     }
+
+
+
     }
